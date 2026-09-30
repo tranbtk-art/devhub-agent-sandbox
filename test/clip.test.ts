@@ -21,7 +21,7 @@ describe('clip', () => {
   });
 
   it('uses custom ellipsis', () => {
-    expect(clip('hello world test', 12, '...')).toBe('hello world...');
+    expect(clip('hello world test', 12, '...')).toBe('hello wor...');
     expect(clip('the quick brown', 10, '--')).toBe('the quic--');
     expect(clip('test string', 8, '')).toBe('test str');
   });
