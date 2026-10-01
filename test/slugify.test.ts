@@ -8,4 +8,7 @@ describe('slugify', () => {
   it('strips accents and punctuation', () => {
     expect(slugify('Crème Brûlée!')).toBe('creme-brulee');
   });
+  it('caps the length without leaving a trailing dash', () => {
+    expect(slugify('Hello Big World', 10)).toBe('hello-big');
+  });
 });
