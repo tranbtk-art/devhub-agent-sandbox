@@ -6,7 +6,7 @@ humans review and merge (or close) them.
 
 ## What is in here
 
-- `src/` – a tiny TypeScript utility library (`slugify`, `parseDuration`, `pluralize`, `clip`).
+- `src/` – a tiny TypeScript utility library (`slugify`, `formatDuration`, `parseDuration`, `pluralize`, `clip`).
 - `test/` – Vitest unit tests (one function is intentionally left untested).
 - `docs/` – a small docs folder agents may extend.
 - `.github/workflows/ci.yml` – runs `npm test` on every push and pull request.
