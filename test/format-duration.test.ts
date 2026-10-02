@@ -28,17 +28,22 @@ describe('formatDuration', () => {
   });
 
   it('handles zero', () => {
-    expect(formatDuration(0)).toBe('0h');
+    expect(formatDuration(0)).toBe('0ms');
   });
 
   it('uses the largest unit that divides evenly', () => {
     // 120000ms = 2m = 120s, should use minutes
     expect(formatDuration(120000)).toBe('2m');
     
-    // 3661000ms doesn't divide evenly by h, m, or s, so use ms
-    expect(formatDuration(3661000)).toBe('3661000ms');
+    // 3661000ms = 3661s (divides evenly by 1000)
+    expect(formatDuration(3661000)).toBe('3661s');
     
     // 3600000ms = 1h = 60m = 3600s, should use hours
     expect(formatDuration(3600000)).toBe('1h');
+  });
+
+  it('throws error for negative numbers', () => {
+    expect(() => formatDuration(-1)).toThrow('Duration must be non-negative');
+    expect(() => formatDuration(-1000)).toThrow('Duration must be non-negative');
   });
 });
